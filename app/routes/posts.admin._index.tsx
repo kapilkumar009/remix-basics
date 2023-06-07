@@ -1,10 +1,10 @@
 import { Link } from "@remix-run/react"
-
+import { Button } from 'antd';
 export default function AdminIndex() {
   return (
     <p>
         <Link to="new">
-        create a New Post
+          <Button>create a New Post</Button>
         </Link>
     </p>
   )

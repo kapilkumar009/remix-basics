@@ -13,8 +13,11 @@ export default function PostSlug() {
   return (
     <main className="mx-auto max-w-4xl">
       <h1 className="my-6 border-b-2 text-center text-3xl">
-        Some Post: {post?.title}
+        {post?.title}
       </h1>
+      <p className=" text-3xl">
+        {post?.markdown}
+      </p>
     </main>
   );
 }
