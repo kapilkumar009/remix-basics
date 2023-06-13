@@ -1,8 +1,8 @@
 import {json} from "@remix-run/node";
 import { Link, useLoaderData, Outlet} from "@remix-run/react";
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
-import { getPosts , deletePost } from "~/models/post.server";
-
+import { getPosts,deletePost,getPost } from "~/models/post.server";
+import { prisma } from "~/db.server";
 export const loader = async () =>{
     return json({posts: await getPosts()});
 };
@@ -12,7 +12,28 @@ const deleteIcon: React.CSSProperties = { margin:"10px", textAlign:"center", fon
 const editIcon:React.CSSProperties={cursor:"pointer"}
 export default function PostAdmin(){
     const { posts } = useLoaderData<typeof loader>();
-
+    // console.log(posts[0]);
+    // const handleDelete = async (slug:string)=>{
+    //     try {
+            
+    //         await deletePost(slug)
+    //     } catch (error) {
+    //         console.log(error);
+            
+    //     }
+    // }
+    // async function handleDelete(slug: string) {
+    //     // Get the post ID from the database
+    //     // const id = await prisma.getPost(slug);
+      
+    //     // Delete the post from the database
+    //     await deletePost(id);
+      
+    //     // Redirect to the list of posts
+    //     // return redirect('/posts');
+    //   }
+  
+    
     return(
         <div className="mx-auto max-4xl">
             <h1 className="my-6 mb-2 border-b-2 text-center text-3xl">
@@ -22,8 +43,8 @@ export default function PostAdmin(){
             <nav className="col-span-4 md:col-span-1">
                 <ul>
                     {posts.map((post)=>(
-                        <><li key={post.slug} style={style}>
-                            <p>{post.title}<DeleteOutlined
+                        <><li key={post.id} style={style}>
+                            <p>{post.slug}<DeleteOutlined 
                             style={deleteIcon}/><EditOutlined style={editIcon}/></p>
                             <p>{post.slug}</p>
                         </li>

@@ -1,4 +1,4 @@
-import type { LoaderArgs } from "@remix-run/node";
+import { LoaderArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { getPost } from "~/models/post.server";

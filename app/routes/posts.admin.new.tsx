@@ -41,6 +41,7 @@ export const action = async ({ request }: ActionArgs) => {
         "markdown must be a string"
       );
   
+      console.log("kapil", formData);
     await createPost({ title, slug, markdown });
   
     return redirect("/posts/admin");

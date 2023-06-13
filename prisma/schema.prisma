@@ -38,7 +38,7 @@ model Note {
 }
 
 model Post {
-  slug     String @id
+  slug     String @id @unique
   title    String
   markdown String
 
