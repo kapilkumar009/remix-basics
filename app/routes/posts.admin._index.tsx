@@ -1,11 +1,16 @@
 import { Link, useActionData } from "@remix-run/react"
 import { getPost } from "~/models/post.server";
 import { Button } from 'antd';
-import { Input, Space } from 'antd';
+import { Input, Space, DatePicker,notification,Divider } from 'antd';
+import type { NotificationPlacement } from 'antd/es/notification/interface';
 import { useEffect, useState } from "react";
 import { ActionArgs, json } from "@remix-run/node";
 import { Form } from "@remix-run/react";
 
+import React, { useMemo } from 'react';
+
+
+const Context = React.createContext({ name: 'kapil' });
 export const action =async ({request}:ActionArgs)=>{
   const formData=await request.formData();
   const searchInput=formData.get("searchInput")
@@ -13,6 +18,16 @@ export const action =async ({request}:ActionArgs)=>{
 }
 
 export default function AdminIndex() {
+  const [api, contextHolder] = notification.useNotification();
+  const openNotification = (placement: NotificationPlacement) => {
+    api.info({
+      message: `Notification ${placement}`,
+      description: <Context.Consumer>{({ name }) => `Hello, ${name}!`}</Context.Consumer>,
+      placement,
+    });
+  };
+  const contextValue = useMemo(() => ({ name: 'kapil singh' }), []);
+
   const [inputValue, setInputValue] = useState('');
   const  post=useActionData<typeof action>();
   
@@ -39,9 +54,22 @@ export default function AdminIndex() {
           type="primary">create a New Post</Button>
         </Link>
       </p>
+        <DatePicker/>
       </Space>
       {post && Array.isArray(post.post) && post.post.map((item: any) => <h1 key={item.slug}>{item.slug}</h1>)}
 
+
+      <Context.Provider value={contextValue}>
+      {contextHolder}
+      <Space>
+      <Button
+         type="primary" ghost
+          onClick={() => openNotification('topRight')}
+        >
+          topRight
+        </Button>
+      </Space>
+    </Context.Provider>
       </>
   )
 }
