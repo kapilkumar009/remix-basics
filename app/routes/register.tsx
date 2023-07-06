@@ -1,9 +1,22 @@
-import React from "react";
+import { useState } from "react";
 
 export default function UserRegisterForm() {
+  const [formData, setFormData] = useState({});
+
+  const handleFormData = (e: any) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    console.log("form data", formData);
+  };
   return (
     <div className="flex items-center justify-center">
-      <div className="w-[500px] p-10">
+      <div className="w-[500px] p-10 mobile:p-2">
         <div className="rounded-xl border border-[#e9e9e9] shadow">
           <div className="flex flex-col space-y-1 p-6">
             <h3 className="font-sans text-2xl font-semibold leading-none tracking-tight">
@@ -29,7 +42,7 @@ export default function UserRegisterForm() {
               </button>
               <button className="flex h-9 items-center justify-center rounded-md border border-[#e9e9e9] px-4 py-2 text-center">
                 <svg
-                  className="w-[34px] pr-2"
+                  className="w-[34px] pr-2 mobile:w-[34px]"
                   xmlns="http://www.w3.org/2000/svg"
                   data-name="Layer 1"
                   viewBox="0 0 24 24"
@@ -45,22 +58,43 @@ export default function UserRegisterForm() {
                 <span className="w-full border-t" />
               </div>
               <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-background px-2">
-                  Or continue with
-                </span>
+                <span className="bg-background px-2">Or continue with</span>
               </div>
             </div>
-            <div className="grid gap-2">
-                <label className="text-sm font-medium" htmlFor="email">Email:</label>
-                <input className="flex h-9 rounded-md border border-[#e9e9e9] px-3 py-1 text-sm shadow-sm outline-none focus-visible:ring-1 focus-visible:ring-[#939599]" type="email" name="email" id="email" placeholder="example@gmail.com" />
-            </div>
-            <div className="grid gap-2">
-                <label className="text-sm font-medium" htmlFor="password">Password:</label>
-                <input className="flex h-9 rounded-md border border-[#e9e9e9] px-3 py-1 text-sm shadow-sm outline-none focus-visible:ring-1 focus-visible:ring-[#939599]" type="password" name="password" id="password" />
-            </div>
-            <div className="flex items-center pt-0">
-                <button className="disabled:opacity-50 inline-flex justify-center hover:bg-[#313133] focus-visible:ring-ring h-9 w-full items-center py-2 rounded-md text-white bg-bgColor focus-visible:ring-1">Create account</button>
-            </div>
+            <form onSubmit={handleSubmit}>
+              <div className="grid gap-2">
+                <label className="text-sm font-medium" htmlFor="email">
+                  Email:
+                </label>
+                <input
+                  onChange={handleFormData}
+                  className="flex h-9 rounded-md border border-[#e9e9e9] px-3 py-1 text-sm shadow-sm outline-none focus-visible:ring-1 focus-visible:ring-[#939599]"
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="example@gmail.com"
+                />
+              </div>
+              <div className="grid gap-2">
+                <label className="text-sm font-medium" htmlFor="password">
+                  Password:
+                </label>
+                <input
+                  onChange={handleFormData}
+                  className="flex h-9 rounded-md border border-[#e9e9e9] px-3 py-1 text-sm shadow-sm outline-none focus-visible:ring-1 focus-visible:ring-[#939599]"
+                  type="password"
+                  name="password"
+                  id="password"
+                />
+              </div>
+              <div className="flex items-center pt-0">
+                <button 
+                type="submit"
+                className="focus-visible:ring-ring inline-flex mt-4 h-9 w-full items-center justify-center rounded-md bg-bgColor py-2 text-white hover:bg-[#313133] focus-visible:ring-1 disabled:opacity-50 mobile:rounded-2xl mobile:bg-blue-500 mobile:hover:bg-blue-400">
+                  Create account
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
