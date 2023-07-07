@@ -46,25 +46,25 @@ export default function ReportIssue() {
   const [selectedItemIndex, setSelectedItemIndex] = useState(null);
   const [securityIndex, setSecurityIndex] = useState(null);
   return (
-    <div className="flex items-center justify-center">
-      <div className="w-[500px] p-2 tablet:w-[790px]">
+    <div className="flex items-center justify-center lg:mt-16 sm:mt-2">
+      <div className="w-[500px] p-2 md:w-[790px]">
         <div className="rounded-xl border border-[#e9e9e9] shadow">
-          <div className="flex flex-col space-y-1.5 p-6 mobile:p-4 ">
-            <h3 className="font-sans tablet:text-xl font-semibold leading-none tracking-tight">
+          <div className="flex flex-col space-y-1.5 p-6 sm:p-4 xs:p-3">
+            <h3 className="font-sans md:text-xl font-semibold leading-none tracking-tight">
               Report an issue
             </h3>
             <p className="pt-1 text-sm text-[#909098]">
               What area are you having problems with?
             </p>
           </div>
-          <div className="grid gap-4 p-6 mobile:p-4 pt-0">
-            <div className="grid grid-cols-2 gap-6 mobile:gap-1">
+          <div className="grid gap-4 p-6 sm:p-4 xs:p-3 pt-0">
+            <div className="grid grid-cols-2 gap-6 sm:gap-1">
               <div className="grid gap-2">
                 <label className="text-sm font-medium" htmlFor="area">
                   Area
                 </label>
                 <div className=" cursor-pointer">
-                  <div className="h-9 flex justify-between mobile:w-[145px] tablet:w-[345px] relative items-center rounded-md border border-[#e9e9e9] p-2 pt-1 bg-white outline-none" onClick={e=>{
+                  <div className="h-9 flex justify-between sm:w-[145px] md:w-[345px] relative items-center rounded-md border border-[#e9e9e9] p-2 pt-1 bg-white outline-none" onClick={e=>{
                     setOpenMenu(!isOpenMenu);
                   }}>
                     {selectedItemIndex !==null ? itemList[selectedItemIndex].name : "Biling"}
@@ -73,7 +73,7 @@ export default function ReportIssue() {
                     {/* drop item */}
                   {
                     isOpenMenu ?(
-                      <div className="rounded-md border mobile:w-[145px] tablet:w-[345px] absolute w-[175px] border-[#e9e9e9] p-2 mt-1 bg-white outline-none">
+                      <div className="rounded-md border sm:w-[145px] xs:w-[125px] xs:text-sm md:w-[345px] absolute w-[175px] border-[#e9e9e9] p-2 mt-1 bg-white outline-none">
                     {
                       itemList.map((item,index:any)=>(
                         <div className="py-1 pl-1 hover:bg-[#efeff3]" key={item.value} onClick={e=>{setSelectedItemIndex(index)
@@ -93,7 +93,7 @@ export default function ReportIssue() {
                   Security-Level
                 </label>
                 <div className=" cursor-pointer">
-                  <div className="h-9 overflow-hidden truncate w-[175px] mobile:w-[145px] tablet:w-[350px] flex justify-between relative items-center rounded-md border border-[#e9e9e9] p-2 pt-1 bg-white outline-none" onClick={e=>{
+                  <div className="h-9 overflow-hidden truncate w-[175px] sm:w-[150px] md:w-[355px] xs:w-[125px] flex justify-between relative items-center rounded-md border border-[#e9e9e9] p-2 pt-1 bg-white outline-none" onClick={e=>{
                     setSecurityMenu(!securityMenu);
                   }}>
                     {securityIndex !==null ? securityItemList[securityIndex].name : "Severity"}
@@ -102,7 +102,7 @@ export default function ReportIssue() {
                     {/* drop item */}
                   {
                     securityMenu ?(
-                      <div className="rounded-md border mobile:w-[145px] tablet:w-[350px] absolute w-[175px] border-[#e9e9e9] p-2 mt-1 bg-white outline-none">
+                      <div className="rounded-md border sm:w-[145px] md:w-[350px] xs:w-[125px] xs:text-sm absolute w-[175px] border-[#e9e9e9] p-2 mt-1 bg-white outline-none">
                     {
                       securityItemList.map((item,index:any)=>(
                         <div className="py-1 pl-1 hover:bg-[#efeff3]" key={item.value} onClick={e=>{setSecurityIndex(index)
@@ -142,7 +142,7 @@ export default function ReportIssue() {
               />
             </div>
           </div>
-          <div className="flex items-center justify-between p-6 pt-0 space-x-2">
+          <div className="flex items-center justify-between p-6 xs:p-3 pt-0 space-x-2">
             <button className="text-sm focus-visible:outline-none focus-visible:ring-1 hover:bg-[#efeff3] h-9 px-4 py-2 rounded-md">Cancel</button>
             <button className="text-sm focus-visible:outline-none focus-visible:ring-1 hover:bg-[#2a2a2c] h-9 px-4 py-2 rounded-md bg-bgColor text-white">Submit</button>
             </div>

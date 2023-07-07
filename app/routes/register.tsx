@@ -15,8 +15,8 @@ export default function UserRegisterForm() {
     console.log("form data", formData);
   };
   return (
-    <div className="flex items-center justify-center">
-      <div className="w-[500px] p-10 mobile:p-2">
+    <div className="flex items-center justify-center lg:mt-16">
+      <div className="w-[500px] p-10 sm:p-2 xs:p-2">
         <div className="rounded-xl border border-[#e9e9e9] shadow">
           <div className="flex flex-col space-y-1 p-6">
             <h3 className="font-sans text-2xl font-semibold leading-none tracking-tight">
@@ -42,7 +42,7 @@ export default function UserRegisterForm() {
               </button>
               <button className="flex h-9 items-center justify-center rounded-md border border-[#e9e9e9] px-4 py-2 text-center">
                 <svg
-                  className="w-[34px] pr-2 mobile:w-[34px]"
+                  className="w-[34px] pr-2 sm:w-[34px]"
                   xmlns="http://www.w3.org/2000/svg"
                   data-name="Layer 1"
                   viewBox="0 0 24 24"
@@ -62,7 +62,7 @@ export default function UserRegisterForm() {
               </div>
             </div>
             <form onSubmit={handleSubmit}>
-              <div className="grid gap-2">
+              <div className="grid gap-2 md:gap-0 xs:gap-0 lg:gap-1 sm:gap-0 mb-3">
                 <label className="text-sm font-medium" htmlFor="email">
                   Email:
                 </label>
@@ -75,7 +75,7 @@ export default function UserRegisterForm() {
                   placeholder="example@gmail.com"
                 />
               </div>
-              <div className="grid gap-2">
+              <div className="grid gap-2 md:gap-0 xs:gap-0 lg:gap-1 sm:gap-0">
                 <label className="text-sm font-medium" htmlFor="password">
                   Password:
                 </label>
@@ -90,7 +90,7 @@ export default function UserRegisterForm() {
               <div className="flex items-center pt-0">
                 <button 
                 type="submit"
-                className="focus-visible:ring-ring inline-flex mt-4 h-9 w-full items-center justify-center rounded-md bg-bgColor py-2 text-white hover:bg-[#313133] focus-visible:ring-1 disabled:opacity-50 mobile:rounded-2xl mobile:bg-blue-500 mobile:hover:bg-blue-400">
+                className="focus-visible:ring-ring inline-flex mt-4 h-9 w-full items-center justify-center rounded-md bg-bgColor py-2 text-white hover:bg-[#313133] focus-visible:ring-1 disabled:opacity-50 md:bg-bgColor sm:bg-bgColor sm:hover:bg-bgColor-400">
                   Create account
                 </button>
               </div>
