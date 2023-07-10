@@ -7,7 +7,7 @@ export default function dashboard() {
     setStartDate(date);
   };
   return (
-    <div className="mt-4 flex justify-between ">
+    <div className="mt-4 md:mt-8 flex justify-between sm:pr-8 ">
       <div className=" text-3xl font-semibold sm:text-xl">
         <h2>Dashboard</h2>
       </div>
@@ -19,7 +19,7 @@ export default function dashboard() {
             startDate={startDate}
             selectsStart
             placeholderText="12/12/2012"
-            className="w-[150px] outline-none sm:w-[100px] sm:hidden"
+            className="w-[150px] outline-none sm:w-[100px] sm:hidden md:block"
             id="datepicker"
           />
           <label htmlFor="datepicker">

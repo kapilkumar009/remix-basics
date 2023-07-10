@@ -4,7 +4,7 @@ import React from "react";
 //   value:number;
 //   svgIcon:string|JSX.Element;
 // }
-export default function carddata(props:any) {
+export default function Carddata(props:any) {
   return (
     <div className=" mt-5 shadow-sm w-[308px] p-6 border-2 rounded-xl">
       <div className="flex justify-between">
