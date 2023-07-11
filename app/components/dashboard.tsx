@@ -7,9 +7,9 @@ export default function dashboard() {
     setStartDate(date);
   };
   return (
-    <div className="mt-4 md:mt-8 flex justify-between sm:pr-8 ">
+    <div className=" mt-4 md:mt-8 flex justify-between sm:pr-8">
       <div className=" text-3xl font-semibold sm:text-xl">
-        <h2>Dashboard</h2>
+        <h2 className="">Dashboard</h2>
       </div>
       <div className="flex">
         <div className="flex px-2 py-1 rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500">

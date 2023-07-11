@@ -13,7 +13,7 @@ export default function Carddata(props:any) {
       </div>
       <div className="mt-4">
         <p className="text-2xl font-semibold">{props.value}</p>
-        <p className="text-sm text-[#949191]">{props.compare}</p>
+        <p className="text-sm text-[#1C4E80]">{props.compare}</p>
       </div>
     </div>
   );

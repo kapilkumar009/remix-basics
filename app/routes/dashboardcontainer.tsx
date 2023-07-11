@@ -76,11 +76,13 @@ const activeIcon = (
 
 export default function dashcompo() {
   return (
-    <div className="sm:pl-8 lg:pl-24 lg:pr-24 ">
+    // lg:pl-24 lg:pr-24
+    // lg:mr-8 mr-8
+    <div className="sm:pl-8 lg:pl-16 lg:pr-10 ">
       <Dashboard />
       <Navbar />
       <div className="xs:grid-cols-1 sm:grid-cols-1 sm:items-center  sm:justify-center md:grid md:grid-cols-2 lg:grid lg:grid-cols-4 xs:items-center xs:justify-center">
-        <span className="mr-8 sm:mr-2 md:mr-0 lg:mr-8">
+        <span className=" sm:mr-2 md:mr-0 ">
           <Carddata
             name="Total Revenue"
             value={"$45,231.89"}
@@ -88,7 +90,7 @@ export default function dashcompo() {
             compare={"+20.1% from last month"}
           />
         </span>
-        <span className="mr-8 sm:mr-2 lg:mr-8">
+        <span className=" sm:mr-2 ">
           <Carddata
             name="Subscriptions"
             value={"+2350"}
@@ -96,7 +98,7 @@ export default function dashcompo() {
             compare={"+180.1% from last month"}
           />
         </span>
-        <span className="mr-8 sm:mr-2 lg:mr-8">
+        <span className="sm:mr-2 ">
           <Carddata
             name="Sales"
             value={"+12,234"}
@@ -104,7 +106,7 @@ export default function dashcompo() {
             compare={"+19% from last month"}
           />
         </span>
-        <span className="mr-8 sm:mr-2 lg:mr-8">
+        <span className="sm:mr-2 ">
           <Carddata
             name="Active Now"
             value={"+573"}
