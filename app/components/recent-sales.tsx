@@ -1,7 +1,7 @@
 export default function RecentSales(props: any) {
   return (
     <div className="sm:pr-8 lg:pr-0">
-    <div className="mt-8 rounded-xl border-2 p-6 shadow">
+    <div className="mt-8 rounded-xl border-2 p-6 shadow overflow-hidden h-[450px] hover:overflow-y-scroll">
       <h3 className=""> Recent Sales</h3>
       <p className="text-sm text-[#949191]">You made 265 sales this month.</p>
       {props.data.map((item: any) => (

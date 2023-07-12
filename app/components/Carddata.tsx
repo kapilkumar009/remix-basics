@@ -1,10 +1,10 @@
-import React from "react";
-// interface CarddataProps {
-//   name?: string;
-//   value:number;
-//   svgIcon:string|JSX.Element;
-// }
-export default function Carddata(props:any) {
+interface CarddataProps {
+  name?: string;
+  value:string;
+  svgIcon:string|JSX.Element;
+  compare:string
+}
+export default function Carddata(props:CarddataProps) {
   return (
     <div className=" mt-5 shadow-sm w-[308px] p-6 border-2 rounded-xl">
       <div className="flex justify-between">
