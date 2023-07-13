@@ -17,7 +17,6 @@ export default function dashboard() {
             selected={startDate}
             onChange={handleStartDateChange}
             startDate={startDate}
-            selectsStart
             placeholderText="12/12/2012"
             className="w-[150px] outline-none sm:w-[100px] sm:hidden md:block"
             id="datepicker"
