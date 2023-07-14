@@ -2,8 +2,8 @@ import { NavLink } from "@remix-run/react";
 
 export default function Sidebar() {
   return (
-    <div className="h-[750px] bg-[#463BFB] text-[16px] text-[#ffffff]">
-      <div className="pl-8 pt-3 flex gap-4 items-center bg-[#1E22FD] pb-2">
+    <div className="h-[705px] bg-[#463BFB] text-[16px] text-[#ffffff]">
+      <div className="pl-8 pt-3 flex gap-4 bg-[#6690FF] items-center pb-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -22,9 +22,19 @@ export default function Sidebar() {
         <span className="text-2xl text-white">Vikasit.</span>
       </div>
       <div className="">
-        <ul className="pt-16">
-          <li className="flex pl-8 pt-5 gap-2 hover:text-[#bbbbbb] hover:text-[17px]">
-            <svg
+        <ul className="pt-0">
+          <li className=" pl-8 pt-5  hover:text-[#bbbbbb] hover:text-[17px]">
+            
+            <NavLink className="flex gap-2"
+             style={({ isActive }) => {
+              return {
+                color: isActive ? "black" : "",
+                backgroundColor: isActive ? "white" : "",
+                padding: isActive ? "4px" : "",
+              };
+            }}
+            to="#">
+              <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -38,7 +48,7 @@ export default function Sidebar() {
                 d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
               />
             </svg>
-            <NavLink to="#">Dashboard</NavLink>
+              Dashboard</NavLink>
           </li>
           <li className="flex pl-8 pt-5 gap-2 hover:text-[#bbbbbb] hover:text-[17px]">
             <svg
