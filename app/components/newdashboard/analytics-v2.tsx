@@ -29,39 +29,42 @@ export default function AnalyticsRoute(props: any) {
   };
 
   return (
-    <div className=" lg:block ml-3 xs:ml-1 mr-1 bg-white md:ml-0 sm:ml-0 sm:flex sm:justify-center sm:items-center">
-      <div className="mt-6 border-2 shadow  sm:ml-0 lg:ml-2 md:w-[700px] sm:w-[350px] lg:w-auto xs:w-[365px]">
+    <div className=" lg:block
+     lg:ml-3 md:ml-0
+     xs:ml-1 mr-1 bg-white ml-1
+     sm:ml-3">
+      <div className="mt-6 border-2 shadow  sm:ml-0 lg:ml-2 md:w-[700px] sm:w-full lg:w-auto xs:w-[365px]">
         <h3 className="p-4  py-4 text-[20px]">Analytics</h3>
         <div className=" h-[375px] flex flex-col justify-between">
           {/* h-[400px] sm:h-[480px] */}
           <table className="w-full table-auto ">
             <thead className="border-l-2 border-r-2 shadow">
-              <tr className="bg-gray-600 text-[18px] text-white ">
+              <tr className="bg-gray-600 lg:text-[18px] text-white ">
                 <th
                   scope="col"
-                  className="py-4 xs:py-2 text-center  text-[18px] font-medium xs:hidden"
+                  className="py-4 xs:py-2 text-center  lg:text-[18px] font-medium xs:hidden"
                 ></th>
                 <th
                   scope="col"
-                  className="py-4 xs:py-2 text-left font-medium  sm:text-[13px] xs:text-[16px] lg:text-[16px]"
+                  className="md:text-[18px]  py-4 xs:py-2 text-left font-medium text-[14px] sm:text-[18px] xs:text-[16px] lg:text-[16px]"
                 >
                   CLIENT
                 </th>
                 <th
                   scope="col"
-                  className="py-4 xs:py-2 text-center font-medium   sm:text-[13px] lg:text-[16px] xs:text-[16px]"
+                  className="md:text-[18px] py-4 xs:py-2 text-center font-medium text-[14px] sm:text-[18px] lg:text-[16px] xs:text-[16px]"
                 >
                   AMOUNT
                 </th>
                 <th
                   scope="col"
-                  className="py-4 xs:py-2 text-center font-medium   sm:text-[13px] lg:text-[16px] xs:text-[16px]"
+                  className="md:text-[18px] py-4 xs:py-2 text-center font-medium text-[14px] sm:text-[18px] lg:text-[16px] xs:text-[16px]"
                 >
                   STATUS
                 </th>
                 <th
                   scope="col"
-                  className="py-4 xs:py-2 text-center font-medium  sm:text-[13px] lg:text-[16px] xs:text-[16px]"
+                  className="md:text-[18px] py-4 xs:py-2 text-center font-medium text-[14px]  sm:text-[18px]  lg:text-[16px] xs:text-[16px]"
                 >
                   DATE
                 </th>
@@ -114,13 +117,13 @@ export default function AnalyticsRoute(props: any) {
                       alt="img"
                     />
                   </td>
-                  <td className=" whitespace-nowrap py-4 text-left font-medium text-gray-900 sm:text-[12px] lg:text-[14px]">
+                  <td className="md:text-[16px] whitespace-nowrap py-4 text-left text-[12px] font-medium text-gray-900 sm:text-[16px] lg:text-[16px]">
                     {item.name}
                   </td>
-                  <td className="whitespace-nowrap py-4 text-center font-light  text-gray-900 sm:text-[12px] lg:text-[14px]">
+                  <td className="md:text-[16px] whitespace-nowrap py-4 text-center text-[12px] font-light  text-gray-900 sm:text-[16px] lg:text-[16px]">
                     {item.totalsale}
                   </td>
-                  <td className="whitespace-nowrap py-4 font-light text-gray-900  sm:text-[12px] lg:text-[14px]">
+                  <td className="md:text-[16px] whitespace-nowrap py-4 font-light text-[12px] text-gray-900  sm:text-[16px] lg:text-[16px]">
                     <p
                       className={
                         item.status === "Approved"
@@ -135,7 +138,7 @@ export default function AnalyticsRoute(props: any) {
                       {item.status}
                     </p>
                   </td>
-                  <td className="whitespace-nowrap py-4 text-center font-light  text-gray-900 sm:text-[12px] lg:text-[14px]">
+                  <td className="md:text-[16px] whitespace-nowrap py-4 text-center text-[12px] font-light  text-gray-900 sm:text-[16px]  lg:text-[16px]">
                     {item.date}
                   </td>
                 </tr>

@@ -33,7 +33,7 @@ export default function DashboradContainerv1() {
       <div className="">
         <Header />
         <div className="flex">
-          <div className="sm:hidden md:hidden xs:hidden lg:block lg:w-[14%]">
+          <div className="sm:hidden md:hidden xs:hidden lg:mt-10 lg:block lg:w-[14%] hidden">
             <Sidebar />
           </div>
           <div className="">

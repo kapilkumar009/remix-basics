@@ -41,12 +41,12 @@ export default function UsersRoute() {
 
   if(!user) return null;
   return (
-    // <div className="sm:mr-2">
-    //   <div className=" ml-2  mt-6 border-2 shadow">
-    //     <h3 className="p-4 text-[20px]">Users Records</h3>
-    //     <div className="h-[350px] hover:overflow-y-auto overflow-hidden">
-    <div className="lg:block bg-white pl-1 mr-1 md:pl-0 md:mr-0 xs:pl-2 xs:pr-2 xs:flex xs:justify-center xs:items-center sm:flex sm:justify-center sm:items-center">
-      <div className="lg:ml-2 sm:ml-0 mt-6  border-2 shadow  md:w-[710px] xs:w-[360px] sm:w-[350px] lg:w-[600px]">
+    <div className="lg:block
+     bg-white ml-1 mr-1
+      md:pl-0 md:mr-0
+      xs:pl-2 xs:pr-2 xs:flex xs:justify-center xs:items-center
+      sm:flex sm:justify-center sm:items-center sm:ml-3 sm:mr-3">
+      <div className="lg:ml-2 sm:ml-0 mt-6  border-2 shadow  md:w-[710px] xs:w-[360px] sm:w-full lg:w-[600px]">
         <h3 className="p-4 text-[20px]">Users Records</h3>
         <div className="h-[373px] hover:overflow-y-auto overflow-hidden">
         <table className="w-full table-fixed  ">
@@ -55,13 +55,13 @@ export default function UsersRoute() {
               <th scope="col" className="text-sm font-medium xs:hidden py-4 text-center">
               
               </th>
-              <th scope="col" className="text-sm font-medium  py-4 text-left xs:px-1">
+              <th scope="col" className="text-[14px] font-medium md:text-[18px] sm:text-[18px] py-4 text-left xs:px-1">
               Name
               </th>
-              <th scope="col" className="text-sm font-medium xs:text-center   py-4 text-left px-5 xs:px-1">
+              <th scope="col" className="text-[14px] md:text-[18px] sm:text-[18px] font-medium xs:text-center py-4 text-left px-1 xs:px-1">
               Email
               </th>
-              <th scope="col" className="text-sm font-medium  xs:text-right xs:pr-4 py-4 text-center">
+              <th scope="col" className="text-[14px] md:text-[18px] sm:text-[18px] font-medium  xs:text-right xs:pr-4 py-4 text-center">
               Role
               </th>
             </tr>
@@ -76,11 +76,11 @@ export default function UsersRoute() {
                         alt="img"
                       />
                   </td>
-              <td className=" py-4 whitespace-nowrap lg:text-[14px] sm:text-[12px] font-medium text-gray-900 text-left">{item.name}</td>
-              <td className="lg:text-[14px] sm:text-[12px] text-gray-900 font-light  py-4 whitespace-nowrap text-left">
+              <td className="md:text-[16px] py-4 whitespace-nowrap lg:text-[16px] sm:text-[16px] text-[12px] font-medium text-gray-900 text-left">{item.name}</td>
+              <td className="md:text-[16px] lg:text-[16px] text-ellipsis overflow-hidden  text-[12px] sm:text-[16px] text-gray-900 font-light  py-4 whitespace-nowrap">
                 {item.email}
               </td>
-              <td className="py-4 pr-2 whitespace-nowrap xs:text-right lg:text-[14px] sm:text-[12px] font-medium text-gray-900 text-center">
+              <td className="md:text-[16px] py-4 text-[12px] pr-2 whitespace-nowrap xs:text-right lg:text-[16px] sm:text-[16px] font-medium text-gray-900 text-center">
               <p className={item.role==="admin"?"text-red-500":""}                    
                     >
                       {item.role}

@@ -35,8 +35,12 @@ const handleSidebar=()=>{
   return (
     //pl-8 pt-3 flex gap-4 bg-[#1E40AF] items-center pb-2
     <div>
-      <div className="flex justify-between bg-[#1E40AF] py-2 sm:top-0 z-50 xs:w-[384px] sm:fixed sm:w-full xs:fixed md:fixed md:w-full">
-      <div className="flex gap-4 text-white items-center md:pl-5 pl-10 sm:pl-3 xs:pl-2">
+      <div className="
+      flex justify-between bg-[#1E40AF] py-2  z-50 fixed w-full
+      sm:top-0 sm:fixed sm:w-full
+      xs:w-[384px] xs:fixed 
+      md:fixed md:w-full">
+      <div className="flex gap-4 text-white items-center md:pl-5 pl-2 lg:pl-10 sm:pl-3 xs:pl-2">
         {
           openSidebar ? (
             <RxCross2 onClick={handleSidebar} className="text-white h-6 w-6 relative lg:hidden"/>
@@ -52,11 +56,11 @@ const handleSidebar=()=>{
             <Sidebar/>
           </div>
         }
-        <span className="text-2xl text-white sm:hidden md:block xs:hidden lg:block lg:pl-6">Vikasit.</span>
+        <span className="lg:text-2xl lg:text-white lg:block sm:block sm:text-2xl hidden md:block md:text-2xl xs:hidden  lg:pl-6">Vikasit.</span>
       </div>
         <div className="flex items-center ">
           <input
-            className="h-8 sm:w-[120px] xs:w-[100px] lg:w-[350px] md:w-[300px] rounded-l-xl px-4 py-2 outline-none items-center"
+            className="w-[40vw] h-8 sm:w-[40vw] xs:w-[100px] lg:w-[350px] md:w-[300px] rounded-l-xl px-4 py-2 outline-none items-center"
             type="text"
             placeholder="Search..."
           />
@@ -77,7 +81,7 @@ const handleSidebar=()=>{
           </svg>
           
         </div>
-        <div className=" lg:pr-10 md:pr-5 sm:pr-4 xs:pr-6">
+        <div className="pr-2 lg:pr-10 md:pr-5 sm:pr-4 xs:pr-6">
           <img
           onClick={handleMenuClick}
             className=" relative w-[35px] rounded-full object-cover cursor-pointer"
