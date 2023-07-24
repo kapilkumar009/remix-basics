@@ -4,7 +4,7 @@ import {data} from "~/components/revenueData"
 export default function OverviewContainer() {
   return (
     <div>
-        {/* <NewOverview data={data}/> */}
+        <NewOverview data={data}/>
     </div>
   )
 }

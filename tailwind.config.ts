@@ -4,10 +4,8 @@ export default {
   content: ["./app/**/*.{js,jsx,ts,tsx}"],
   theme: {
     screens: {
-      'sm': '360px',
-      // => @media (min-width: 640px) { ... }
-
-      'md': '768px',
+      'sm': {'min': '360px', 'max': '767px'},
+        'md': {'min': '768px', 'max': '1023px'},
       // => @media (min-width: 768px) { ... }
 
       'lg': '1024px',
@@ -22,6 +20,8 @@ export default {
     extend: {
       screens: {
         'xs': {'min':"320px",'max':"359px"},
+        // 'mb': {'min':"376px", 'max':"767px"},
+        // => @media (min-width: 640px) { ... }
         // => @media (min-width: 320px) { ... }
       },
       colors:{
